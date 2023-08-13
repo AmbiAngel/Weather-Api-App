@@ -1,0 +1,1 @@
+(()=>{let e=document.createElement("h1");e.textContent="JS test",document.querySelector("body").appendChild(e)})();
