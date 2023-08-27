@@ -21,10 +21,21 @@ async function handleInputForm(e){
 
 
 let temperatureElement = document.querySelector('.temp')
+let locationElement = document.querySelector('.location')
+let timeElement = document.querySelector('.time')
+let humidityElement = document.querySelector('.humidity')
+let rainElement = document.querySelector('.rain')
+let windElement = document.querySelector('.wind')
 
 
 class RenderDOM{
     static renderComponents(data){
-        temperatureElement.textContent = data.current.temp_f
+        locationElement.textContent = data.location.name
+        timeElement.textContent = data.location.time
+        temperatureElement.textContent = `${data.current.temp_f}F / ${data.current.temp_c} C`
+        humidityElement.textContent = `${data.current.humidity}%`
+        rainElement.textContent = `${data.current.chance_of_rain}%` //TODO: Need to check API Doc. There's a forecast API for this.
+        windElement.textContent = `${data.current.wind_mph}mph`
+
     }
 }
