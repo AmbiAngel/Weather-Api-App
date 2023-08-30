@@ -1,4 +1,7 @@
+import './style.css'
+
 import {weatherModule} from './modules/dataRecieverModule'
+
 
 
 let inputForm = document.querySelector('.input-form')
