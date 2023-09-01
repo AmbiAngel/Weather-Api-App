@@ -39,7 +39,7 @@ class RenderDOM{
         timeElement.textContent = data.location.localtime
         temperatureElement.textContent = `${data.current.temp_f}F / ${data.current.temp_c} C`
         humidityElement.textContent = `${data.current.humidity}%`
-        rainElement.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%` //TODO: Need to check API Doc. There's a forecast API for this.
+        rainElement.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`
         windElement.textContent = `${data.current.wind_mph}mph`
 
     }
