@@ -22,7 +22,8 @@ async function handleInputForm(e){
     
 }
 
-
+let conditionElement = document.querySelector('.condition')
+let iconElement = document.querySelector('.icon')
 let temperatureElement = document.querySelector('.temp')
 let locationElement = document.querySelector('.location')
 let regionElement = document.querySelector('.region')
@@ -34,6 +35,8 @@ let windElement = document.querySelector('.wind')
 
 class RenderDOM{
     static renderComponents(data){
+        iconElement.setAttribute('src', 'https:' + data.current.condition.icon)
+        conditionElement.textContent = data.current.condition.text
         locationElement.textContent = data.location.name
         regionElement.textContent = data.location.region
         timeElement.textContent = data.location.localtime
