@@ -15,11 +15,18 @@ inputForm.addEventListener('submit', handleInputForm)
 
 async function handleInputForm(e){
     e.preventDefault()
-    let data = await weatherApiSession.getWeatherData()
+    let [location, units] = grabInputs()
+    let data = await weatherApiSession.getWeatherData(location, units)
     console.log(data);
-    console.log(data.current.temp_f);
+    // console.log(data.current.temp_f);
     RenderDOM.renderComponents(data)
     
+}
+
+function grabInputs(){
+    let locInput = document.querySelector('#loc-input')
+    let unitsInput = document.querySelector('#units-input')
+    return [locInput.value, unitsInput.value]
 }
 
 let conditionElement = document.querySelector('.condition')
@@ -47,3 +54,7 @@ class RenderDOM{
 
     }
 }
+
+
+let initialData = await weatherApiSession.getWeatherData('New York', 'F')
+RenderDOM.renderComponents(initialData)
