@@ -5,7 +5,19 @@
 body{
     margin: 0;
     padding: 0;
+    /* height: 100vh;
+    background: url('./mountain-sky-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center; */
 }
+body {
+    height: 100vh;
+    margin: 0;
+    background-image: url(https://images.unsplash.com/photo-1578241561880-0a1d5db3cb8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
 
 h1{
     text-align: center;
@@ -14,6 +26,7 @@ h1{
 
 .input-form{
     margin: 0 auto;
+    text-align: center;
 }
 
 .temp{
@@ -38,6 +51,12 @@ h1{
     grid-column: 1/4;
     grid-row: 1;
     text-align: center;
+}
+
+.weather-info-container, .input-form{
+    background-color: rgba(0, 0, 0, 0.616);
+    border-radius: 20px;
+    color: white;
 }
 
 .temp-icon-container{
