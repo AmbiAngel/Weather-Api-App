@@ -46,7 +46,7 @@ class RenderDOM{
         locationElement.textContent = data.location.name
         regionElement.textContent = data.location.region
         timeElement.textContent = data.location.localtime
-        temperatureElement.textContent = `${data.current.temp_f}F / ${data.current.temp_c} C`
+        temperatureElement.textContent = `${data.current.temp_f}F`
         humidityElement.textContent = `${data.current.humidity}%`
         rainElement.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`
         windElement.textContent = `${data.current.wind_mph}mph`

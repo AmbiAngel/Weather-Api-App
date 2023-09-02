@@ -22,15 +22,19 @@
         
     </form>
     <div class="weather-info-container">
-        <h1 class="">Location</h1>
-        <p class="condition"></p>
-        <img src="" alt="" class="icon">
-        <p><span class="location"></span>, <span class="region"></span></p>
-        <p class="time"></p>
-        <p class="temp"></p>
-        <p>Humidity: <span class="humidity"></span> </p>
-        <p>Chance of Rain: <span class="rain"></span></p>
-        <p>Wind: <span class="wind"></span></p>
+        <div class="main-weather-container">
+            <p class="location-container"><span class="location"></span>, <span class="region"></span></p>
+            
+            <p class="temp-icon-container"><img src="" alt="" class="icon"> <span class="temp"></span></p>
+            <p>Precipitation: <span class="rain"></span></p>
+            <p>Humidity: <span class="humidity"></span> </p>
+            <p>Wind: <span class="wind"></span></p>
+        </div>
+        <div class="secondary-weather-container">
+            <p class="">Weather</p>
+            <p class="time"></p>
+            <p class="condition"></p>
+        </div>
         
     </div>
     <script src="bundle.js"></script>
