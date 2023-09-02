@@ -13,11 +13,6 @@ function weatherModule(api){
     
         return data
     }
-    
-    
-    
-    
-
 
     return {getWeatherData}
 

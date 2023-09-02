@@ -6,29 +6,7 @@ import {weatherModule} from './modules/dataRecieverModule'
 
 let inputForm = document.querySelector('.input-form')
 
-let apiKey = '46859bc2bfea42b09c9170947231208'
-
-let weatherApiSession = weatherModule(apiKey)
-console.log(weatherApiSession);
-
-inputForm.addEventListener('submit', handleInputForm)
-
-async function handleInputForm(e){
-    e.preventDefault()
-    let [location, units] = grabInputs()
-    let data = await weatherApiSession.getWeatherData(location, units)
-    console.log(data);
-    // console.log(data.current.temp_f);
-    RenderDOM.renderComponents(data)
-    
-}
-
-function grabInputs(){
-    let locInput = document.querySelector('#loc-input')
-    let unitsInput = document.querySelector('#units-input')
-    return [locInput.value, unitsInput.value]
-}
-
+//Weather info Elements
 let conditionElement = document.querySelector('.condition')
 let iconElement = document.querySelector('.icon')
 let temperatureElement = document.querySelector('.temp')
@@ -38,6 +16,27 @@ let timeElement = document.querySelector('.time')
 let humidityElement = document.querySelector('.humidity')
 let rainElement = document.querySelector('.rain')
 let windElement = document.querySelector('.wind')
+
+let apiKey = '46859bc2bfea42b09c9170947231208'
+
+let weatherApiSession = weatherModule(apiKey)
+
+inputForm.addEventListener('submit', handleInputForm)
+
+async function handleInputForm(e){
+    e.preventDefault()
+    let [location, units] = grabInputs()
+    let data = await weatherApiSession.getWeatherData(location, units)
+    console.log(data);
+    RenderDOM.renderComponents(data)
+    
+}
+
+function grabInputs(){
+    let locInput = document.querySelector('#loc-input')
+    let unitsInput = document.querySelector('#units-input')
+    return [locInput.value, unitsInput.value]
+}
 
 
 class RenderDOM{
@@ -55,6 +54,6 @@ class RenderDOM{
     }
 }
 
-
+//Render New York on load
 let initialData = await weatherApiSession.getWeatherData('New York', 'F')
 RenderDOM.renderComponents(initialData)
