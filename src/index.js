@@ -28,7 +28,7 @@ async function handleInputForm(e){
     let [location, units] = grabInputs()
     let data = await weatherApiSession.getWeatherData(location, units)
     console.log(data);
-    RenderDOM.renderComponents(data)
+    RenderDOM.renderWeatherInfo(data)
     
 }
 
@@ -40,7 +40,7 @@ function grabInputs(){
 
 
 class RenderDOM{
-    static renderComponents(data){
+    static renderWeatherInfo(data){
         iconElement.setAttribute('src', 'https:' + data.current.condition.icon)
         conditionElement.textContent = data.current.condition.text
         locationElement.textContent = data.location.name
@@ -56,4 +56,4 @@ class RenderDOM{
 
 //Render New York on load
 let initialData = await weatherApiSession.getWeatherData('New York', 'F')
-RenderDOM.renderComponents(initialData)
+RenderDOM.renderWeatherInfo(initialData)
