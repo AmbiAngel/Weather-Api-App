@@ -10,6 +10,8 @@ body{
     background-size: cover;
     background-position: center; */
 }
+
+
 body {
     height: 100vh;
     margin: 0;
@@ -19,13 +21,15 @@ body {
     overflow: hidden;
   }
 
+  body > *, .input-form{
+    margin: 50px auto
+  }
+
 h1{
     text-align: center;
-    /* margin: 0 auto; */
 }
 
 .input-form{
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -53,7 +57,7 @@ h1{
     text-align: center;
 }
 
-.weather-info-container, .input-form{
+.weather-info-container, .input-form, .forecast-container{
     background-color: rgba(0, 0, 0, 0.616);
     border-radius: 20px;
     color: white;
@@ -80,4 +84,17 @@ h1{
 .secondary-weather-container{
     display: flex;
     flex-flow: column wrap;
+}
+
+.forecast-container{
+    min-height: 100px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around
+
+}
+
+.forecast-day-container{
+    display: flex;
+    flex-flow: column;
 }

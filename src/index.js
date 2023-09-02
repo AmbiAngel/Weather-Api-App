@@ -18,6 +18,8 @@ let humidityElement = document.querySelector('.humidity')
 let rainElement = document.querySelector('.rain')
 let windElement = document.querySelector('.wind')
 
+let forecastContainer = document.querySelector('.forecast-container')
+
 let apiKey = '46859bc2bfea42b09c9170947231208'
 
 let weatherApiSession = weatherModule(apiKey)
@@ -29,7 +31,8 @@ async function handleInputForm(e){
     let [location, units] = grabInputs()
     let data = await weatherApiSession.getWeatherData(location, units)
     console.log(data);
-    RenderDOM.renderWeatherInfo(data)
+    RenderDOM.renderCurrentWeatherInfo(data)
+    RenderDOM.renderForecastInfo(data)
     
 }
 
@@ -41,7 +44,7 @@ function grabInputs(){
 
 
 class RenderDOM{
-    static renderWeatherInfo(data){
+    static renderCurrentWeatherInfo(data){
         iconElement.setAttribute('src', 'https:' + data.current.condition.icon)
         conditionElement.textContent = data.current.condition.text
         locationElement.textContent = data.location.name
@@ -51,10 +54,43 @@ class RenderDOM{
         humidityElement.textContent = `${data.current.humidity}%`
         rainElement.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`
         windElement.textContent = `${data.current.wind_mph}mph`
+    }
 
+    static renderForecastInfo(data){
+        let forecastArr = data.forecast.forecastday
+        forecastArr.forEach(day => {
+            console.log(day.date);
+            console.log(day.day.condition.text);
+            console.log(day.day.avgtemp_f);
+
+            let forecastDayContainer = document.createElement('div')
+            forecastDayContainer.classList.add('forecast-day-container')
+
+            let forecastDate = document.createElement('p')
+            forecastDate.textContent = day.date
+            forecastDayContainer.appendChild(forecastDate)
+
+            let forecastCondition = document.createElement('p')
+            forecastCondition.textContent = day.day.condition.text
+            forecastDayContainer.appendChild(forecastCondition)
+
+            let forecastTemp = document.createElement('p')
+            forecastTemp.textContent = day.day.avgtemp_f
+            forecastDayContainer.appendChild(forecastTemp)
+            
+
+            forecastContainer.appendChild(forecastDayContainer)
+        })
     }
 }
 
+
 //Render New York on load
-let initialData = await weatherApiSession.getWeatherData('New York', 'F')
-RenderDOM.renderWeatherInfo(initialData)
+async function initialLoad(){
+    let initialData = await weatherApiSession.getWeatherData('New York', 'F')
+    console.log(initialData);
+    RenderDOM.renderCurrentWeatherInfo(initialData)
+    RenderDOM.renderForecastInfo(initialData)
+}
+
+initialLoad()
