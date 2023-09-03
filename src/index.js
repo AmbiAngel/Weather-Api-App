@@ -42,6 +42,12 @@ function grabInputs(){
     return [locInput.value, unitsInput.value]
 }
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 
 class RenderDOM{
     static renderCurrentWeatherInfo(data){
@@ -57,6 +63,7 @@ class RenderDOM{
     }
 
     static renderForecastInfo(data){
+        removeAllChildNodes(forecastContainer)
         let forecastArr = data.forecast.forecastday
         forecastArr.forEach(day => {
             console.log(day.date);
