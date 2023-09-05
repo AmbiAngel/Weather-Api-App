@@ -12,7 +12,7 @@ let conditionElement = document.querySelector('.condition')
 let iconElement = document.querySelector('.icon')
 let temperatureElement = document.querySelector('.temp')
 let locationElement = document.querySelector('.location')
-let regionElement = document.querySelector('.region')
+let countryElement = document.querySelector('.country')
 let timeElement = document.querySelector('.time')
 let humidityElement = document.querySelector('.humidity')
 let rainElement = document.querySelector('.rain')
@@ -54,7 +54,7 @@ class RenderDOM{
         iconElement.setAttribute('src', 'https:' + data.current.condition.icon)
         conditionElement.textContent = data.current.condition.text
         locationElement.textContent = data.location.name
-        regionElement.textContent = data.location.region
+        countryElement.textContent = data.location.country
         timeElement.textContent = data.location.localtime
         temperatureElement.textContent = `${data.current.temp_f}F`
         humidityElement.textContent = `${data.current.humidity}%`
