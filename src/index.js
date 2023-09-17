@@ -73,6 +73,10 @@ class RenderDOM{
             let forecastDayContainer = document.createElement('div')
             forecastDayContainer.classList.add('forecast-day-container')
 
+            let forecastIcon = document.createElement('img')
+            forecastIcon.setAttribute('src','https:' + day.day.condition.icon)
+            forecastDayContainer.appendChild(forecastIcon)
+
             let forecastDate = document.createElement('p')
             forecastDate.textContent = day.date
             forecastDayContainer.appendChild(forecastDate)
