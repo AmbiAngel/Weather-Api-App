@@ -3,6 +3,8 @@ import mountainIMG from './mountain-sky-img.jpg'
 
 import {weatherModule} from './modules/dataRecieverModule'
 
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 
 let inputForm = document.querySelector('.input-form')
@@ -78,7 +80,8 @@ class RenderDOM{
             forecastDayContainer.appendChild(forecastIcon)
 
             let forecastDate = document.createElement('p')
-            forecastDate.textContent = day.date
+            let dateObj = new Date(day.date)
+            forecastDate.textContent = days[dateObj.getDay()]
             forecastDayContainer.appendChild(forecastDate)
 
             let forecastCondition = document.createElement('p')
