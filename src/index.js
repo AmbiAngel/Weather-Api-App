@@ -89,7 +89,7 @@ class RenderDOM{
             forecastDayContainer.appendChild(forecastCondition)
 
             let forecastTemp = document.createElement('p')
-            forecastTemp.textContent = day.day.avgtemp_f
+            forecastTemp.textContent = `${day.day.avgtemp_f}F`
             forecastDayContainer.appendChild(forecastTemp)
             
 
