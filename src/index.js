@@ -61,8 +61,8 @@ class RenderDOM{
         let dateObj = new Date(data.location.localtime)
         let dateTime = dateObj.toJSON().slice(11,16)
         timeElement.textContent = `${days[dateObj.getDay()]} ${dateTime}`
-        console.log(dateObj);
-        console.log(dateObj.toJSON());
+        // console.log(dateObj);
+        // console.log(dateObj.toJSON());
         // timeElement.textContent = data.location.localtime
 
         temperatureElement.textContent = `${data.current.temp_f}F`
@@ -73,6 +73,7 @@ class RenderDOM{
 
     static renderForecastInfo(data){
         removeAllChildNodes(forecastContainer)
+
         let forecastArr = data.forecast.forecastday
         forecastArr.forEach(day => {
             console.log(day.date);
@@ -87,7 +88,7 @@ class RenderDOM{
             forecastDayContainer.appendChild(forecastIcon)
 
             let forecastDate = document.createElement('p')
-            let dateObj = new Date(day.date)
+            let dateObj = new Date(day.date.replace(/-/g, '\/')) //Date constructor needs hyphens replaced by dashes otherwise the constructor will be one day off
             forecastDate.textContent = days[dateObj.getDay()]
             forecastDayContainer.appendChild(forecastDate)
 
