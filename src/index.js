@@ -57,7 +57,14 @@ class RenderDOM{
         conditionElement.textContent = data.current.condition.text
         locationElement.textContent = data.location.name
         countryElement.textContent = data.location.country
-        timeElement.textContent = data.location.localtime
+
+        let dateObj = new Date(data.location.localtime)
+        let dateTime = dateObj.toJSON().slice(11,16)
+        timeElement.textContent = `${days[dateObj.getDay()]} ${dateTime}`
+        console.log(dateObj);
+        console.log(dateObj.toJSON());
+        // timeElement.textContent = data.location.localtime
+
         temperatureElement.textContent = `${data.current.temp_f}F`
         humidityElement.textContent = `${data.current.humidity}%`
         rainElement.textContent = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`
