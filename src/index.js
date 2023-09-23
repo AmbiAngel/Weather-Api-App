@@ -13,7 +13,8 @@ let inputForm = document.querySelector('.input-form')
 let conditionElement = document.querySelector('.condition')
 let iconElement = document.querySelector('.icon')
 let temperatureElement = document.querySelector('.temp')
-let locationElement = document.querySelector('.location')
+let cityElement = document.querySelector('.city')
+let stateElement = document.querySelector('.state')
 let countryElement = document.querySelector('.country')
 let timeElement = document.querySelector('.time')
 let humidityElement = document.querySelector('.humidity')
@@ -55,7 +56,8 @@ class RenderDOM{
     static renderCurrentWeatherInfo(data){
         iconElement.setAttribute('src', 'https:' + data.current.condition.icon)
         conditionElement.textContent = data.current.condition.text
-        locationElement.textContent = data.location.name
+        cityElement.textContent = data.location.name
+        stateElement.textContent = data.location.region
         countryElement.textContent = data.location.country
 
         let dateObj = new Date(data.location.localtime)
