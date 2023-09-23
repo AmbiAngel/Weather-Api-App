@@ -59,9 +59,9 @@ class RenderDOM{
         countryElement.textContent = data.location.country
 
         let dateObj = new Date(data.location.localtime)
-        let dateTime = dateObj.toJSON().slice(11,16)
+        let dateTime = data.location.localtime.slice(11)
         timeElement.textContent = `${days[dateObj.getDay()]} ${dateTime}`
-        // console.log(dateObj);
+
         // console.log(dateObj.toJSON());
         // timeElement.textContent = data.location.localtime
 
@@ -76,9 +76,9 @@ class RenderDOM{
 
         let forecastArr = data.forecast.forecastday
         forecastArr.forEach(day => {
-            console.log(day.date);
-            console.log(day.day.condition.text);
-            console.log(day.day.avgtemp_f);
+            // console.log(day.date);
+            // console.log(day.day.condition.text);
+            // console.log(day.day.avgtemp_f);
 
             let forecastDayContainer = document.createElement('div')
             forecastDayContainer.classList.add('forecast-day-container')
