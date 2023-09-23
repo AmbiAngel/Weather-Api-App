@@ -86,9 +86,8 @@ h1{
 }
 
 .secondary-weather-container{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+    display:grid;
+    grid-template-rows: repeat(4, 1fr);
 }
 
 .forecast-container{
@@ -102,4 +101,5 @@ h1{
 .forecast-day-container{
     display: grid;
     grid-template-rows: repeat(auto-fit, 1fr);
+    justify-items: center;
 }
