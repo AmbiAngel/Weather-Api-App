@@ -11,15 +11,16 @@
     <form class="input-form" action="">
         <label for="loc-input">Location:</label>
         <input type="text" id="loc-input">
-
-        <label for="units-input">Units</label>
-        <select type="select" id="units-input">
-            <option value="F">F</option>
-            <option value="C">C</option>
-        </select>
-
         <button type="submit">Submit</button>
         
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <p class="temp-F">F</p>
+            <p class="temp-C">C</p>
+        </div>   
     </form>
     <div class="weather-info-container">
         <div class="main-weather-container">
