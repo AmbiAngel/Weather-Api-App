@@ -42,6 +42,7 @@ async function handleInputForm(e){
 function grabInputs(){
     let locInput = document.querySelector('#loc-input')
     let unitsInput = document.querySelector('#units-input')
+    console.log(unitsInput.checked);
     return [locInput.value, unitsInput.value]
 }
 
