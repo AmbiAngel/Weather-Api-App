@@ -25,7 +25,7 @@ let windElement = document.querySelector('.wind')
 
 let forecastContainer = document.querySelector('.forecast-container')
 
-let apiKey = '46859bc2bfea42b09c9170947231208'
+let apiKey = '46859bc2bfea42b09c9170947231208' //Api Key not important to hide since it's a free key
 
 let weatherApiSession = weatherModule(apiKey)
 
