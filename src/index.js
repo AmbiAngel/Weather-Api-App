@@ -1,5 +1,5 @@
 import './style.css'
-import mountainIMG from './mountain-sky-img.jpg'
+// import mountainIMG from './mountain-sky-img.jpg'
 
 import {weatherModule} from './modules/dataRecieverModule'
 
