@@ -213,3 +213,29 @@ h1{
 
 
 }
+
+@media(max-width: 960px){
+    .weather-info-container{
+        display: grid;
+        justify-content: inherit;
+        align-items: center;
+        justify-items: center;
+    }
+    .main-weather-container{
+
+    }
+
+    .secondary-weather-container{
+        grid-row: 1/2;
+        grid-template-rows: repeat(2, 1fr);
+        align-self: center;
+    }
+}
+
+@media(max-width:750px){
+    .main-weather-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        width: inherit;
+    }
+}
