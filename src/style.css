@@ -29,6 +29,11 @@ body {
 
 h1{
     text-align: center;
+    background: #000000a1;
+    color: white;
+    padding: 20px;
+    width: 600px;
+    border-radius: 20px;
 }
 
 .input-form{
