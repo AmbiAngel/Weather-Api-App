@@ -234,6 +234,7 @@ h1{
         grid-row: 1/2;
         grid-template-rows: repeat(2, 1fr);
         align-self: center;
+        justify-items: center;
     }
 }
 
