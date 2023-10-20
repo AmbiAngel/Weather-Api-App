@@ -32,7 +32,7 @@ h1{
     background: #000000a1;
     color: white;
     padding: 20px;
-    width: 600px;
+    max-width: 600px;
     border-radius: 20px;
 }
 
@@ -243,5 +243,14 @@ h1{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
         width: inherit;
+    }
+}
+
+@media(max-width:650px){
+    form.input-form {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
     }
 }
