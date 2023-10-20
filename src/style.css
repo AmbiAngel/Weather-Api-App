@@ -215,19 +215,24 @@ h1{
 }
 
 @media(max-width: 960px){
+    .weather-info-container, .input-form, .forecast-container, h1{
+        max-width: 80%;
+    }
+}
+
+@media(max-width:688px){
+    .main-weather-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        width: inherit;
+    }
+
     .weather-info-container{
         display: grid;
         justify-content: inherit;
         align-items: center;
         justify-items: center;
     }
-    .main-weather-container{
-
-    }
-    .weather-info-container, .input-form, .forecast-container, h1{
-        max-width: 80%;
-    }
-
     .secondary-weather-container{
         grid-row: 1/2;
         grid-template-rows: repeat(2, 1fr);
@@ -236,20 +241,17 @@ h1{
     }
 }
 
-@media(max-width:750px){
-    .main-weather-container{
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-        width: inherit;
-    }
-}
-
-@media(max-width:650px){
+@media(max-width:504px){
     form.input-form {
         display: grid;
         justify-content: center;
         align-items: center;
         justify-items: center;
     }
+}
 
+@media(max-width:320px){
+    .weather-info-container, .input-form, .forecast-container, h1{
+        max-width: 95%;
+    }
 }
