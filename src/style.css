@@ -29,11 +29,6 @@ body {
 
 h1{
     text-align: center;
-    background: #000000a1;
-    color: white;
-    padding: 20px;
-    max-width: 600px;
-    border-radius: 20px;
 }
 
 .input-form{
@@ -72,7 +67,7 @@ h1{
     text-align: center;
 }
 
-.weather-info-container, .input-form, .forecast-container{
+.weather-info-container, .input-form, .forecast-container, h1{
     background-color: rgba(0, 0, 0, 0.616);
     border-radius: 20px;
     color: white;
@@ -229,6 +224,9 @@ h1{
     .main-weather-container{
 
     }
+    .weather-info-container, .input-form, .forecast-container, h1{
+        max-width: 80%;
+    }
 
     .secondary-weather-container{
         grid-row: 1/2;
@@ -253,4 +251,5 @@ h1{
         align-items: center;
         justify-items: center;
     }
+
 }
