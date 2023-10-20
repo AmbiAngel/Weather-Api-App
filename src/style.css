@@ -255,7 +255,7 @@ h1{
     }
 }
 
-@media(max-width:320px){
+@media(max-width:350px){
     .weather-info-container, .input-form, .forecast-container, h1{
         max-width: 95%;
     }
