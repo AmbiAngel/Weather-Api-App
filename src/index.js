@@ -83,8 +83,7 @@ class RenderDOM{
         let dateTime = data.location.localtime.slice(11)
         timeElement.textContent = `${days[dateObj.getDay()]} ${dateTime}`
 
-        // console.log(dateObj.toJSON());
-        // timeElement.textContent = data.location.localtime
+
 
         temperatureElement.textContent = `${data.current.temp_f}F`
         humidityElement.textContent = `${data.current.humidity}%`
@@ -103,8 +102,7 @@ class RenderDOM{
         let dateTime = data.location.localtime.slice(11)
         timeElement.textContent = `${days[dateObj.getDay()]} ${dateTime}`
 
-        // console.log(dateObj.toJSON());
-        // timeElement.textContent = data.location.localtime
+
 
         temperatureElement.textContent = `${data.current.temp_c}C`
         humidityElement.textContent = `${data.current.humidity}%`
@@ -117,9 +115,6 @@ class RenderDOM{
 
         let forecastArr = data.forecast.forecastday
         forecastArr.forEach(day => {
-            // console.log(day.date);
-            // console.log(day.day.condition.text);
-            // console.log(day.day.avgtemp_f);
 
             let forecastDayContainer = document.createElement('div')
             forecastDayContainer.classList.add('forecast-day-container')
@@ -151,9 +146,6 @@ class RenderDOM{
 
         let forecastArr = data.forecast.forecastday
         forecastArr.forEach(day => {
-            // console.log(day.date);
-            // console.log(day.day.condition.text);
-            // console.log(day.day.avgtemp_f);
 
             let forecastDayContainer = document.createElement('div')
             forecastDayContainer.classList.add('forecast-day-container')
